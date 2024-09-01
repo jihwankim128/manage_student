@@ -24,11 +24,11 @@ public class StudentService {
 
   public void activateStudent(String name) {
     Student student = getStudent(name);
-    student.changeActiveStatus();
+    student.activate();
   }
 
   public void deactivateStudent(String name) {
     Student student = getStudent(name);
-    student.changeActiveStatus();
+    student.deactivate();
   }
 }
