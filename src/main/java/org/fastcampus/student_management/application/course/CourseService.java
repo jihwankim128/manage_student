@@ -1,6 +1,5 @@
 package org.fastcampus.student_management.application.course;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.fastcampus.student_management.application.course.dto.CourseInfoDto;
 import org.fastcampus.student_management.application.student.StudentService;
@@ -33,7 +32,7 @@ public class CourseService {
 
   public void changeFee(String studentName, int fee) {
     courseRepository.getCourseListByStudent(studentName)
-        .forEach(course -> course.setFee(fee));
+        .forEach(course -> course.changeFee(fee));
   }
 
 }

@@ -5,7 +5,7 @@ public class Course {
   private final String courseName;
   private final DayOfWeek dayOfWeek;
   private final Long courseTime;
-  private int fee;
+  private final CourseFee fee;
 
   public Course(Student student, String courseName, int fee, DayOfWeek dayOfWeek, Long courseTime) {
     if (student == null) {
@@ -14,7 +14,7 @@ public class Course {
 
     this.student = student;
     this.courseName = courseName;
-    this.fee = fee;
+    this.fee = new CourseFee(fee);
     this.dayOfWeek = dayOfWeek;
     this.courseTime = courseTime;
   }
@@ -36,7 +36,7 @@ public class Course {
   }
 
   public int getFee() {
-    return fee;
+    return this.fee.getFee();
   }
 
   public DayOfWeek getDayOfWeek() {
@@ -47,8 +47,8 @@ public class Course {
     return courseTime;
   }
 
-  public void setFee(int fee) {
-    this.fee = fee;
+  public void changeFee(int fee) {
+    this.fee.changeFee(fee);
   }
 
 }
