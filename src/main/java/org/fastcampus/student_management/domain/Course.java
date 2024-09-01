@@ -27,6 +27,10 @@ public class Course {
     return this.dayOfWeek.equals(dayOfWeek);
   }
 
+  public boolean isWeek() {
+    return dayOfWeek == DayOfWeek.SATURDAY || dayOfWeek == DayOfWeek.SUNDAY;
+  }
+
   public boolean isActivateUser() {
     return student.isActivate();
   }

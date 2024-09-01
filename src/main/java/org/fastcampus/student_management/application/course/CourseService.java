@@ -4,6 +4,7 @@ import java.util.List;
 import org.fastcampus.student_management.application.course.dto.CourseInfoDto;
 import org.fastcampus.student_management.application.student.StudentService;
 import org.fastcampus.student_management.domain.Course;
+import org.fastcampus.student_management.domain.CourseList;
 import org.fastcampus.student_management.domain.DayOfWeek;
 import org.fastcampus.student_management.domain.Student;
 import org.fastcampus.student_management.repo.CourseRepository;
@@ -31,8 +32,9 @@ public class CourseService {
   }
 
   public void changeFee(String studentName, int fee) {
-    courseRepository.getCourseListByStudent(studentName)
-        .forEach(course -> course.changeFee(fee));
+    List<Course> coursesByStudent = courseRepository.getCourseListByStudent(studentName);
+    CourseList courses = new CourseList(coursesByStudent);
+    courses.changeCoursesFee(fee);
   }
 
 }
