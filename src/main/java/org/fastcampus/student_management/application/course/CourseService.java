@@ -32,6 +32,8 @@ public class CourseService {
   }
 
   public void changeFee(String studentName, int fee) {
-    // TODO: 과제 구현 부분
+    courseRepository.getCourseListByStudent(studentName)
+        .forEach(course -> course.setFee(fee));
   }
+
 }
