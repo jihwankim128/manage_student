@@ -29,7 +29,13 @@ public class Student {
   public String getAddress() {
     return address;
   }
+
   public boolean isActivate() {
     return activated;
   }
+
+  public void changeActiveStatus() {
+    this.activated = !this.activated;
+  }
+
 }
